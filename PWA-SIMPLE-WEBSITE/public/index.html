@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>PWA-SIMPLE-WEBSITE</title>
+<style>
+    h1,p{
+
+        font-family:"Comic Sans MS";
+        color:"AliceBlue";
+
+    }
+    body{
+        background-image: url("a.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-size: 100%
+    }
+    .button {
+
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-family:"Comic Sans MS";
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color:#008CBA;
+		width: 30%;
+    }
+
+
+	input[type=text],[type=password] {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+<link rel="manifest" href="manifest.json">
+<body bg-background_color="cyan">
+
+<div style="margin-top:100px; text-align: center;">
+<h1 style="color:AliceBlue;">
+Welcome to Quotes</h1><br>
+<p style="color:AliceBlue;font-size:160%;"><b><i>"No matter who you are, where you’re from, your skin color, your gender identity, just speak yourself.
+  Find your name and find your voice by speaking yourself."</i></b></p>
+<a href="next.html" class="button">Click Here</a>
+</div>
+
+<script>
+    if('serviceWorker' in navigator){
+        window.addEventListener('load',()=>{
+            navigator.serviceWorker.register('sw.js')
+        .then(registration =>{
+            console.log('service worker is registered',registration);
+        })
+        .catch(err =>{
+            console.log('Registration failed',err);
+        })
+        })
+    }
+</script>
+
+</body>
+</html>
